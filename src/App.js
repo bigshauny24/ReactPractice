@@ -1,26 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header.js';
+
 
 class App extends Component {
+
+constructor (){
+  super();//allowsus to use the state
+  this.state = {
+     pi: 3.14,
+     name: 'C#'
+  }
+}
+
+//es6 arrow function
+changeName = (name) => {
+  this.setState(
+    {name: name}
+  )
+  }
+
+  
+
   render() {
+    //javascript here
     return (
+
+      //javascript here
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <Header name={this.state.name} change={this.changeName}/>
+
+
+
+      </div>//this is javascript here
     );
   }
 }
